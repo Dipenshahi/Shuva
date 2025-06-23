@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Letter - Surprise</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #c3d9ff, #a0b8ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #4a4a4a;
+    }
+
+    .letter-container {
+      background: #fffefc;
+      border: 1px solid #dcd7d0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 600px;
+      padding: 40px 50px;
+      border-radius: 15px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      position: relative;
+      white-space: pre-wrap;
+      min-height: 250px;
+    }
+
+    .letter-header {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #5a5a5a;
+    }
+
+    .letter-body {
+      margin-bottom: 30px;
+      min-height: 150px;
+      position: relative;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #4a4a4a;
+      margin-left: 2px;
+      animation: blink 1s step-start infinite;
+      vertical-align: bottom;
+    }
+
+    @keyframes blink {
+      50% {
+        background-color: transparent;
+      }
+    }
+
+    .letter-footer {
+      text-align: right;
+      font-style: italic;
+      font-size: 1rem;
+      color: #7a7a7a;
+    }
+  </style>
+</head>
+<body>
+  <div class="letter-container" role="main" aria-label="Surprise letter">
+    <div class="letter-header">A Special Letter Just For You</div>
+    <div class="letter-body" id="letterBody"></div>
+    <div class="letter-footer">- I love you 💙</div>
+  </div>
+
+  <script>
+    const letterText = `Shuva,
+
+Aba finally timle password thapayeu hola so yep the password tell's the truth. I've been holding something in for a while, and I think it's time I finally said it. I like you MAybe love you ig.I just wanted you to know.
+
+You're one of the most amazing people I've ever met. Your energy, your smile, the way you see the world — it all draws me in. I'm not great with words, but I couldn’t keep this to myself anymore.
+
+No matter what, I'm grateful to know you. You mean more to me than you might realize.
+================
+With all my heart,
+Dipen`;
+
+    const letterBody = document.getElementById('letterBody');
+    let index = 0;
+
+    // Create cursor element
+    const cursor = document.createElement('span');
+    cursor.classList.add('cursor');
+    letterBody.appendChild(cursor);
+
+    function typeWriter() {
+      if (index < letterText.length) {
+        // Insert character before cursor
+        cursor.insertAdjacentText('beforebegin', letterText.charAt(index));
+        index++;
+        setTimeout(typeWriter, 50); // delay between characters for smooth effect
+      } else {
+        // Remove cursor after typing is done
+        cursor.remove();
+      }
+    }
+
+    window.onload = () => {
+      typeWriter();
+    };
+  </script>
+</body>
+</html>

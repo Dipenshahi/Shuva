@@ -32,16 +32,37 @@
       font-size: 2.5rem;
       color: #4a4a6a;
       margin-bottom: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typewriter 3s steps(30) 1s forwards;
     }
 
     .intro-container p {
       font-size: 1.2rem;
       color: #7a7a9a;
+      margin-bottom: 20px;
     }
 
     .emoji {
       font-size: 3rem;
       animation: float 3s ease-in-out infinite;
+    }
+
+    .enter-button {
+      padding: 10px 20px;
+      background-color: #a0b8ff;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .enter-button:hover {
+      transform: scale(1.05);
     }
 
     @keyframes fadeIn {
@@ -53,13 +74,23 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
   </style>
 
   <script>
-    // Redirect to main page after 4 seconds
+    // Redirect to main page on button click
+    function enterPage() {
+      window.location.href = "main.html"; // change this to your real file
+    }
+
+    // Optionally, add automatic redirect after 5 seconds if no click
     setTimeout(() => {
       window.location.href = "main.html"; // change this to your real file
-    }, 4000);
+    }, 5000);
   </script>
 </head>
 <body>
@@ -67,6 +98,7 @@
     <div class="emoji">🍜💤</div>
     <h1>Just for you, sleepyhead</h1>
     <p>Loading laziness...</p>
+    <button class="enter-button" onclick="enterPage()">Enter</button>
   </div>
 </body>
 </html>
