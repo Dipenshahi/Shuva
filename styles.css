@@ -1,0 +1,170 @@
+   @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Comic Neue', cursive, sans-serif;
+      background: #e6f0ff;
+      color: #4a4a6a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+      overflow-y: auto;}
+
+    /* Full background noodle and sleeping emoji pattern */
+    body::before {
+      content: "🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤\A🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤\A🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤\A🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤\A🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤\A🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤\A🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤\A🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤\A🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤 🍜 💤";
+      white-space: pre;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      font-size: 3rem;
+      color: #c3d9ff;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+      line-height: 1.2;
+      letter-spacing: 0.3rem;
+    }
+
+    .container {
+      background: #ffffffcc;
+      border-radius: 25px;
+      max-width: 600px;
+      width: 100%;
+      padding: 30px 35px;
+      box-sizing: border-box;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(74, 104, 255, 0.2);
+      position: relative;
+      z-index: 1;
+      color: #3a3a5a;
+    }
+
+    h1 {
+      font-weight: 300;
+      color: #5a5a8a;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 25px 0;
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: #5a5a7a;
+      line-height: 1.5;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 24px;
+    }
+
+    ul li::before {
+      content: "🍜";
+      position: absolute;
+      left: 0;
+      font-size: 1.3rem;
+      top: 0;
+      filter: drop-shadow(0 0 1px #a0b8ff);
+      white-space: nowrap;
+    }
+    ul + ul li::before {
+      content: "💤";
+      filter: drop-shadow(0 0 1px #a0b8ff);
+    }
+
+    .photos {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .photo-card {
+      flex: 1 1 45%;
+      background: #f0f4ff;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: default;
+      border: 2px solid #a0b8ff;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.4s ease;
+      box-shadow: 0 0 10px #a0b8ff;
+      will-change: transform, box-shadow;
+      transform-style: preserve-3d;
+    }
+
+    .photo-card:hover {
+      border-color: #5a7aff;
+      box-shadow:
+        0 0 10px #5a7aff,
+        0 0 20px #7a9aff,
+        0 0 30px #5a7aff;
+      transform: scale(1.05) rotateX(5deg) rotateY(5deg);
+      z-index: 10;
+    }
+
+    .photo-card img {
+      width: 100%;
+      display: block;
+      border-radius: 20px 20px 0 0;
+      filter: drop-shadow(0 0 5px #5a7aff);
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px #7a9aff) brightness(1.1);
+    }
+
+    .caption {
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      color: #5a5a7a;
+      font-style: italic;
+    }
+
+    .teasing {
+      font-size: 1.1rem;
+      color: #7a7abf;
+      font-weight: 300;
+      margin-top: 10px;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    @media (max-width: 480px) {
+      .photos {
+        flex-direction: column;
+      }
+      .photo-card {
+        flex: 1 1 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 25px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      ul {
+        font-size: 1rem;
+      }
+      .caption {
+        font-size: 0.85rem;
+      }
+      .teasing {
+        font-size: 1rem;
+      }
+    }
