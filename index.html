@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: linear-gradient(135deg, #d3e5ff, #f3f4ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .intro-container {
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .intro-container h1 {
+      font-size: 2.5rem;
+      color: #4a4a6a;
+      margin-bottom: 10px;
+    }
+
+    .intro-container p {
+      font-size: 1.2rem;
+      color: #7a7a9a;
+    }
+
+    .emoji {
+      font-size: 3rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+
+  <script>
+    // Redirect to main page after 4 seconds
+    setTimeout(() => {
+      window.location.href = "main.html"; // change this to your real file
+    }, 4000);
+  </script>
+</head>
+<body>
+  <div class="intro-container">
+    <div class="emoji">🍜💤</div>
+    <h1>Just for you, sleepyhead</h1>
+    <p>Loading laziness...</p>
+  </div>
+</body>
+</html>
