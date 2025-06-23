@@ -309,12 +309,11 @@
       </article>
       <article class="photo-card" tabindex="0">
         <img src="her.jpg" alt="Photo of her" />
-        <p class="caption">A lovely new memory,
-bichara lai khalesi le karaidirw! HAHAHHAHA</p>
+        <p class="caption">A lovely new memory</p>
       </article>
       <article class="photo-card" tabindex="0">
         <img src="her again.jpg" alt="Another photo of her" />
-        <p class="caption">Another lovely new memory ramri dekhya xa afu vanda thulo chasma lagairw 😂❤️‍🩹</p>
+        <p class="caption">Another lovely new memory</p>
       </article>
     </section>
     <p class="teasing" aria-live="polite" aria-atomic="true">
@@ -328,5 +327,20 @@ More Memories Coming Soon <br>
 Do not click
 </button>
   </div>
+  <audio id="background-audio" autoplay loop>
+    <source src="audio-editor-output.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  <button id="mute-button" aria-label="Mute or unmute background audio" title="Mute/Unmute" style="position: fixed; top: 10px; right: 10px; z-index: 1000; background-color: #cddfff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 18px; color: #4a4a6a;">
+    🔈
+  </button>
+  <script>
+    const audio = document.getElementById('background-audio');
+    const muteButton = document.getElementById('mute-button');
+    muteButton.addEventListener('click', () => {
+      audio.muted = !audio.muted;
+      muteButton.textContent = audio.muted ? '🔇' : '🔈';
+    });
+  </script>
 </body>
 </html>
